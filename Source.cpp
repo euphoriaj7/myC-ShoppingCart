@@ -1,26 +1,21 @@
 #include<iostream>
 #include<list>
+using namespace std;
 
 int main()
 {
-	/// <summary>
-	/// cout stands for c++out statement 
-	/// </summary>
-	/// <returns></returns>
-	std::cout << "Welcom to the Shopping Cart Program!" << std::endl;
-
     // print("Welcome to the Shopping Cart Program!")
     // <summary>
 	// cout stands for c++out statement 
 	// </summary>
 	// <returns></returns>
-	std::cout << "Welcom to the Shopping Cart Program!" << std::endl;
+    cout << "Welcome to the Shopping Cart Program!" << endl;
 
        // shopping_list = []
-        std::list<std::string>shoppingList = {};
+        list<string>shoppingList = {};
 
        // price_list = []
-        std::list<float>priceList = {};
+        list<float>priceList = {};
 
        // choice = 0
         float choice = 0;
@@ -34,30 +29,44 @@ int main()
 
         //while cont == True:
         while (cont == true) {
-            
+
             // print('1. Add item')
-            std::cout << "1. Add item" << std::endl;
+            cout << "1. Add item" << endl;
 
             //   print('2. View cart')
-            std::cout << "1. View cart" << std::endl;
+            cout << "2. View cart" << endl;
 
             // print('3. Remove item')
-            std::cout << "1. Remove item" << std::endl;
+            cout << "3. Remove item" << endl;
 
             //print('4.compute total')
-            std::cout << "1. compute total" << std::endl;
+            cout << "4. compute total" << endl;
 
             //print('5. Quit')
-            std::cout << "1. Quit" << std::endl;
+            cout << "5. Quit" << endl;
 
             //choice = input("Please select one of the following: ")
+            int choice;
+            cout << "Please select one of the following: ";
+            cin >> choice;
             //if choice == '1':
+            if (choice == 1) {
+                string item;
+                float price;
+                cout << "What item would you like to add? ";
+                cin >> item;
+                shoppingList.push_back(item);
+                cout << "How much is the item? ";
+                cin >> price;
+                priceList.push_back(price);
+                cout << item << " has been added to the cart.\n";
                 //item = input('What item would you like to add? ')
                 //price = float(input('How much is the item? '))
                 //shopping_list.append(item)
                 //price_list.append(price)
                 //print(f"'{item}' has been added to the cart.")
                 //print()
+            }
             // if choice == '2':
                 //n = 0
             //  print("The contents of the shopping cart are:")
@@ -84,6 +93,6 @@ int main()
                     //print("Please make sure you are ready next time!")
                 //else:
                     // print('I dont know what you mean!??! Please answer y or n next time \n;)\n:P ')
-
-        }     
+            return 0;
+        }  return 0;
 }

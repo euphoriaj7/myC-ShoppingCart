@@ -1,5 +1,7 @@
 #include<iostream>
 #include<list>
+#include<vector>
+
 using namespace std;
 
 int main()
@@ -12,10 +14,10 @@ int main()
     cout << "Welcome to the Shopping Cart Program!" << endl;
 
        // shopping_list = []
-        list<string>shoppingList = {};
+    vector<string>shoppingList = {};
 
        // price_list = []
-        list<float>priceList = {};
+    vector<float>priceList = {};
 
        // choice = 0
         float choice = 0;
@@ -25,7 +27,6 @@ int main()
 
         //cont = True
         bool cont = true;
-
 
         //while cont == True:
         while (cont == true) {
@@ -47,11 +48,17 @@ int main()
 
             //choice = input("Please select one of the following: ")
             int choice;
+            string item;
             cout << "Please select one of the following: ";
             cin >> choice;
             //if choice == '1':
+            //item = input('What item would you like to add? ')
+                //price = float(input('How much is the item? '))
+                //shopping_list.append(item)
+                //price_list.append(price)
+                //print(f"'{item}' has been added to the cart.")
+                //print()
             if (choice == 1) {
-                string item;
                 float price;
                 cout << "What item would you like to add? ";
                 cin >> item;
@@ -60,25 +67,41 @@ int main()
                 cin >> price;
                 priceList.push_back(price);
                 cout << item << " has been added to the cart.\n";
-                //item = input('What item would you like to add? ')
-                //price = float(input('How much is the item? '))
-                //shopping_list.append(item)
-                //price_list.append(price)
-                //print(f"'{item}' has been added to the cart.")
-                //print()
+                
             }
             // if choice == '2':
-                //n = 0
+            //n = 0
             //  print("The contents of the shopping cart are:")
                 //for items in shopping_list :
                     //print(f"{n+1} {shopping_list[n]} ${price_list[n]:.2f}")
                     //  n += 1
                     //print()
+            if (choice == 2) {
+                int myIndex = 0;
+                cout << "The contents of the shopping cart are: \n ";
+                for(string item : shoppingList) {
+                    cout << (myIndex + 1) << shoppingList[myIndex] << " $" << priceList[myIndex] << "\n";
+                    myIndex++;
+                    cout << " ";
+                }
+            }
+             
             //if choice == '3' :
                 //  remove = int(input("Which item would you like to remove? ")) - 1
                 //shopping_list.pop(remove)
                 // price_list.pop(remove)
                 //print("Item removed.")
+            if (choice == 3) {
+                int remove; 
+                auto elem_to_remove = shoppingList.begin();
+                cout << "Which item would you like to remove? (Please put in the number that corresponds with the item you wish to remove) \n";
+                cin >> remove;
+                //remove = remove - 1;
+                if (elem_to_remove != shoppingList.end()) {
+                    shoppingList.erase(elem_to_remove);
+                }
+                cout << "Item removed. \n ";
+            }
             //if choice == '4' :
                 //  for items in price_list :
                     //total += items
@@ -93,6 +116,6 @@ int main()
                     //print("Please make sure you are ready next time!")
                 //else:
                     // print('I dont know what you mean!??! Please answer y or n next time \n;)\n:P ')
-            return 0;
-        }  return 0;
+            //return 0;
+        }  //return 0;
 }

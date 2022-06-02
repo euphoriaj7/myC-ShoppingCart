@@ -109,11 +109,6 @@ int main()
                 //  for items in price_list :
                     //total += items
                     //  print(f"${total:.2f}")
-            if (choice == 4) {
-                for (float items : priceList) {
-                    float total += items;
-                }
-            }
             //if choice == '5' :
                 //  verify = input('Are you sure?(put "y" for yes and "n" for no) ')
                 //if verify == "y" :

@@ -99,7 +99,7 @@ int main()
                     cin >> remove;
                     //remove = (remove - 1);
                     ////if (elem_to_remove != shoppingList.end()) {
-                    shoppingList.erase(shoppingList.begin() + (remove));
+                    shoppingList.erase(shoppingList.begin() + (remove-1));
                     //}
                     cout << "Item removed. \n ";
                 }
@@ -111,7 +111,8 @@ int main()
                     //  print(f"${total:.2f}")
             if (choice == 4) {
                 for (float items : priceList) {
-                    float total += items;
+                    float total = items++;
+                    cout << " $ " << total <<"\n";
                 }
             }
             //if choice == '5' :

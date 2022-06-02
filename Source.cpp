@@ -92,15 +92,18 @@ int main()
                 // price_list.pop(remove)
                 //print("Item removed.")
             if (choice == 3) {
-                int remove; 
-                auto elem_to_remove = shoppingList.begin();
-                cout << "Which item would you like to remove? (Please put in the number that corresponds with the item you wish to remove) \n";
-                cin >> remove;
-                //remove = remove - 1;
-                if (elem_to_remove != shoppingList.end()) {
-                    shoppingList.erase(elem_to_remove);
+                if(shoppingList.size() > 0){
+                    int remove;
+                    //auto elem_to_remove = shoppingList.begin();
+                    cout << "Which item would you like to remove? (Please put in the number that corresponds with the item you wish to remove) \n";
+                    cin >> remove;
+                    //remove = (remove - 1);
+                    ////if (elem_to_remove != shoppingList.end()) {
+                    shoppingList.erase(shoppingList.begin() + remove-1);
+                    //}
+                    cout << "Item removed. \n ";
                 }
-                cout << "Item removed. \n ";
+                
             }
             //if choice == '4' :
                 //  for items in price_list :

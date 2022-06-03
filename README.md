@@ -1,4 +1,4 @@
-# myKotlinTipCalc
+# myc++ShoppingCart
 
 # Overview
 This is a simple c++ program to show the basic of c++

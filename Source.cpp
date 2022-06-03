@@ -110,9 +110,12 @@ int main()
                     //total += items
                     //  print(f"${total:.2f}")
             if (choice == 4) {
+                float total = 0.0;
                 for (float items : priceList) {
-                    float total = items++;
-                    cout << " $ " << total <<"\n";
+                    total += items;
+                }
+                if(total == total){
+                    cout << " $ " << total << "\n";
                 }
             }
             //if choice == '5' :
@@ -125,6 +128,9 @@ int main()
                     //print("Please make sure you are ready next time!")
                 //else:
                     // print('I dont know what you mean!??! Please answer y or n next time \n;)\n:P ')
-            //return 0;
+            if (choice == 5) {
+                //return 0;
+            }
+            
         }  //return 0;
 }

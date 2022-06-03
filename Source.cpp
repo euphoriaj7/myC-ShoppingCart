@@ -129,8 +129,21 @@ int main()
                 //else:
                     // print('I dont know what you mean!??! Please answer y or n next time \n;)\n:P ')
             if (choice == 5) {
+                string verify = "";
+                cout << "Are you sure? \n (put 'y' for yes and 'n' for no)";
+                if (verify == "y") {
+                    cout << "Thank you for shopping. Goodbye. \n";
+                    cout << " \n";
+                    cont = false;
+                }
+                else if(verify == "n") {
+                        cout << "Plesae make sure you are ready to to quit next time! \n";
+                }
+                else {
+                    cout << "I dont know what you mean!??! Please answer 'y' or 'n' next time \n ;) \n";
+                }
                 //return 0;
             }
             
-        }  //return 0;
+        }  return 0;
 }

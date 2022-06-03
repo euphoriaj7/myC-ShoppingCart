@@ -79,8 +79,9 @@ int main()
             if (choice == 2) {
                 int myIndex = 0;
                 cout << "The contents of the shopping cart are: \n ";
+                cout << " \n ";
                 for(string item : shoppingList) {
-                    cout << (myIndex + 1) << shoppingList[myIndex] << " $" << priceList[myIndex] << "\n";
+                    cout << (myIndex + 1)<<"." << " " << shoppingList[myIndex] << " $" << priceList[myIndex] << "\n";
                     myIndex++;
                     cout << " ";
                 }
@@ -131,6 +132,7 @@ int main()
             if (choice == 5) {
                 string verify = "";
                 cout << "Are you sure? \n (put 'y' for yes and 'n' for no)";
+                cin >> verify;
                 if (verify == "y") {
                     cout << "Thank you for shopping. Goodbye. \n";
                     cout << " \n";
@@ -138,15 +140,14 @@ int main()
                     return 0;
                 }
                 else if (verify == "n") {
-                    cout << "Plesae make sure you are ready to to quit next time! \n";
+                    cout << "Plesae make sure you are ready to to quit next time. \n";
                 }
                 else {
                     cout << "I dont know what you mean!??! Please answer 'y' or 'n' next time \n ;) \n";
                 }
-            //if (choice != 1 || choice != 2 || choice != 3 || choice != 4 || choice != 5) {
-            //    cout << "Please select only one of the five options! \n";
-            //}
-            //return 0;
-            }  
-        }  //return 0;
+            }
+            else{
+                cout << "Please select only one of the five options! \n";
+            }
+        }  
 }

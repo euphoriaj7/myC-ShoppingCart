@@ -57,7 +57,7 @@ int main()
                 //shopping_list.append(item)
                 //price_list.append(price)
                 //print(f"'{item}' has been added to the cart.")
-                //print()
+                //print()        
             if (choice == 1) {
                 float price;
                 cout << "What item would you like to add? ";
@@ -135,15 +135,18 @@ int main()
                     cout << "Thank you for shopping. Goodbye. \n";
                     cout << " \n";
                     cont = false;
+                    return 0;
                 }
-                else if(verify == "n") {
-                        cout << "Plesae make sure you are ready to to quit next time! \n";
+                else if (verify == "n") {
+                    cout << "Plesae make sure you are ready to to quit next time! \n";
                 }
                 else {
                     cout << "I dont know what you mean!??! Please answer 'y' or 'n' next time \n ;) \n";
                 }
-                //return 0;
-            }
-            
-        }  return 0;
+            //if (choice != 1 || choice != 2 || choice != 3 || choice != 4 || choice != 5) {
+            //    cout << "Please select only one of the five options! \n";
+            //}
+            //return 0;
+            }  
+        }  //return 0;
 }

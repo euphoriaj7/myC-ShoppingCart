@@ -1,11 +1,14 @@
 #include<iostream>
 #include<list>
 #include<vector>
+#include<shopping.h>
 
 using namespace std;
+using namespace shopping;
 
 int main()
 {
+    Shopping shopping;
     // print("Welcome to the Shopping Cart Program!")
     // <summary>
 	// cout stands for c++out statement 
@@ -13,11 +16,10 @@ int main()
 	// <returns></returns>
     cout << "Welcome to the Shopping Cart Program!" << endl;
 
-       // shopping_list = []
-    vector<string>shoppingList = {};
 
-       // price_list = []
-    vector<float>priceList = {};
+    // vector<string>shoppingList = {};
+
+    // vector<float>priceList = {};
 
        // choice = 0
         float choice = 0;
@@ -59,15 +61,7 @@ int main()
                 //print(f"'{item}' has been added to the cart.")
                 //print()        
             if (choice == 1) {
-                float price;
-                cout << "What item would you like to add? ";
-                cin >> item;
-                shoppingList.push_back(item);
-                cout << "How much is the item? ";
-                cin >> price;
-                priceList.push_back(price);
-                cout << item << " has been added to the cart.\n";
-                
+                shopping.addItem();                
             }
             // if choice == '2':
             //n = 0
@@ -101,6 +95,7 @@ int main()
                     //remove = (remove - 1);
                     ////if (elem_to_remove != shoppingList.end()) {
                     shoppingList.erase(shoppingList.begin() + (remove-1));
+                    priceList.erase(priceList.begin() + (remove-1));
                     //}
                     cout << "Item removed. \n ";
                 }

@@ -1,7 +1,7 @@
 #include<iostream>
 #include<list>
 #include<vector>
-#include<shopping.h>
+#include"shopping.h"
 
 using namespace std;
 using namespace shopping;
@@ -89,11 +89,11 @@ int main()
             if (choice == 3) {
                 if(shoppingList.size() > 0){
                     int remove;
-                    //auto elem_to_remove = shoppingList.begin();
+                    //auto elem_to_remove = Shopping::shoppingList.begin();
                     cout << "Which item would you like to remove? (Please put in the number that corresponds with the item you wish to remove) \n";
                     cin >> remove;
                     //remove = (remove - 1);
-                    ////if (elem_to_remove != shoppingList.end()) {
+                    ////if (elem_to_remove != Shopping::shoppingList.end()) {
                     shoppingList.erase(shoppingList.begin() + (remove-1));
                     priceList.erase(priceList.begin() + (remove-1));
                     //}

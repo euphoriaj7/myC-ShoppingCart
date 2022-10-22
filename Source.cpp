@@ -1,11 +1,14 @@
 #include<iostream>
 #include<list>
 #include<vector>
+#include"tax.h"
 
 using namespace std;
+using namespace tax;
 
 int main()
 {
+    Tax tax;
     // print("Welcome to the Shopping Cart Program!")
     // <summary>
 	// cout stands for c++out statement 
@@ -41,14 +44,17 @@ int main()
             cout << "3. Remove item" << endl;
 
             //print('4.compute total')
-            cout << "4. compute total" << endl;
+            cout << "4. compute subtotal" << endl;
+
+            cout << "5. compute total" << endl;
 
             //print('5. Quit')
-            cout << "5. Quit" << endl;
+            cout << "6. Quit" << endl;
 
             //choice = input("Please select one of the following: ")
             int choice;
             string item;
+            float total = 0.0;
             cout << "Please select one of the following: ";
             cin >> choice;
             //if choice == '1':
@@ -101,6 +107,7 @@ int main()
                     //remove = (remove - 1);
                     ////if (elem_to_remove != shoppingList.end()) {
                     shoppingList.erase(shoppingList.begin() + (remove-1));
+                    priceList.erase(priceList.begin()+(remove-1));
                     //}
                     cout << "Item removed. \n ";
                 }
@@ -111,13 +118,18 @@ int main()
                     //total += items
                     //  print(f"${total:.2f}")
             if (choice == 4) {
-                float total = 0.0;
                 for (float items : priceList) {
                     total += items;
                 }
                 if(total == total){
-                    cout << " $ " << total << "\n";
+                    cout << " Subtotal is $ " << total << "\n";
                 }
+            }
+            if (choice == 5) {
+                float customerTotal = 0.0;
+                tax.findTax();
+                customerTotal = total * tax.customerTax;
+                cout << "The customers total with tax is: " << customerTotal << "\n";
             }
             //if choice == '5' :
                 //  verify = input('Are you sure?(put "y" for yes and "n" for no) ')
@@ -129,9 +141,9 @@ int main()
                     //print("Please make sure you are ready next time!")
                 //else:
                     // print('I dont know what you mean!??! Please answer y or n next time \n;)\n:P ')
-            if (choice == 5) {
+            if (choice == 6) {
                 string verify = "";
-                cout << "Are you sure? \n (put 'y' for yes and 'n' for no)";
+                cout << "Are you sure? \n (put 'y' for yes and 'n' for no)" << "\n";
                 cin >> verify;
                 if (verify == "y") {
                     cout << "Thank you for shopping. Goodbye. \n";
@@ -142,12 +154,12 @@ int main()
                 else if (verify == "n") {
                     cout << "Plesae make sure you are ready to to quit next time. \n";
                 }
-                else {
+                else if (verify != "n" or verify != "y") {
                     cout << "I dont know what you mean!??! Please answer 'y' or 'n' next time \n ;) \n";
                 }
-            }
-            else{
-                cout << "Please select only one of the five options! \n";
+                else{
+                cout << "Please select only one of the six options! \n";
             }
         }  
+    }
 }

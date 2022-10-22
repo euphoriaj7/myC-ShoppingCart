@@ -10,7 +10,7 @@ namespace shopping {
         // list<string>shoppingList;
         // list<float>priceList;
         string item;
-        // float price;
+        float price;
         void addItem();
         void removeItem();
     };

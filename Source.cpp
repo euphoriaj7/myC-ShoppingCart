@@ -36,6 +36,7 @@ int main()
 
         //while cont == True:
         while (cont == true) {
+            cout << endl;
 
             // print('1. Add item')
             cout << "1. Add item" << endl;
@@ -66,10 +67,10 @@ int main()
                 //print()        
             if (choice == 1) {
                 shopping.addItem();
-                shoppingList.push_back(item);
+                shoppingList.push_back(shopping.item);
                 cout << "How much is the item? ";
-                cin >> itemPrice;
-                priceList.push_back(itemPrice);
+                cin >> shopping.price;
+                priceList.push_back(shopping.price);
                 cout << item << " has been added to the cart.\n";
             }
             // if choice == '2':
@@ -120,7 +121,7 @@ int main()
                     total += items;
                 }
                 if(total == total){
-                    cout << " $ " << total << "\n";
+                    cout << " Your Cart's Total is $ " << total << "\n";
                 }
             }
             //if choice == '5' :
@@ -135,7 +136,7 @@ int main()
                     // print('I dont know what you mean!??! Please answer y or n next time \n;)\n:P ')
             if (choice == 5) {
                 string verify = "";
-                cout << "Are you sure? \n (put 'y' for yes and 'n' for no)";
+                cout << "Are you sure? \n (put 'y' for yes and 'n' for no)" << "\n";
                 cin >> verify;
                 if (verify == "y") {
                     cout << "Thank you for shopping. Goodbye. \n";
@@ -146,12 +147,12 @@ int main()
                 else if (verify == "n") {
                     cout << "Plesae make sure you are ready to to quit next time. \n";
                 }
-                else {
+                else if (verify != "n" or verify != "y") {
                     cout << "I dont know what you mean!??! Please answer 'y' or 'n' next time \n ;) \n";
                 }
-            }
-            else{
+                else{
                 cout << "Please select only one of the five options! \n";
             }
         }  
+    }
 }

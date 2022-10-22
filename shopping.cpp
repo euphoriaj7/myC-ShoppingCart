@@ -9,7 +9,7 @@ using namespace shopping;
 // constexpr static list<float>priceList = {};
 
 Shopping::Shopping()
-: item("") {};
+: item(""), price(0.0) {};
 
 
 void Shopping::addItem(){

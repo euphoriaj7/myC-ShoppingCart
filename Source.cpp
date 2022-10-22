@@ -68,8 +68,8 @@ int main()
                 shopping.addItem();
                 shoppingList.push_back(item);
                 cout << "How much is the item? ";
-                cin >> price;
-                priceList.push_back(price);
+                cin >> itemPrice;
+                priceList.push_back(itemPrice);
                 cout << item << " has been added to the cart.\n";
             }
             // if choice == '2':

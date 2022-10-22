@@ -1,11 +1,18 @@
 #include<iostream>
 #include<list>
 #include<vector>
+#include"shopping.h"
 
 using namespace std;
+using namespace shopping;
+
+vector<string>shoppingList = {};
+
+vector<float>priceList = {};
 
 int main()
 {
+    Shopping shopping;
     // print("Welcome to the Shopping Cart Program!")
     // <summary>
 	// cout stands for c++out statement 
@@ -13,11 +20,10 @@ int main()
 	// <returns></returns>
     cout << "Welcome to the Shopping Cart Program!" << endl;
 
-       // shopping_list = []
-    vector<string>shoppingList = {};
 
-       // price_list = []
-    vector<float>priceList = {};
+    // vector<string>shoppingList = {};
+
+    // vector<float>priceList = {};
 
        // choice = 0
         float choice = 0;
@@ -30,6 +36,7 @@ int main()
 
         //while cont == True:
         while (cont == true) {
+            cout << endl;
 
             // print('1. Add item')
             cout << "1. Add item" << endl;
@@ -59,15 +66,12 @@ int main()
                 //print(f"'{item}' has been added to the cart.")
                 //print()        
             if (choice == 1) {
-                float price;
-                cout << "What item would you like to add? ";
-                cin >> item;
-                shoppingList.push_back(item);
+                shopping.addItem();
+                shoppingList.push_back(shopping.item);
                 cout << "How much is the item? ";
-                cin >> price;
-                priceList.push_back(price);
+                cin >> shopping.price;
+                priceList.push_back(shopping.price);
                 cout << item << " has been added to the cart.\n";
-                
             }
             // if choice == '2':
             //n = 0
@@ -101,6 +105,7 @@ int main()
                     //remove = (remove - 1);
                     ////if (elem_to_remove != shoppingList.end()) {
                     shoppingList.erase(shoppingList.begin() + (remove-1));
+                    priceList.erase(priceList.begin() + (remove-1));
                     //}
                     cout << "Item removed. \n ";
                 }
@@ -116,7 +121,7 @@ int main()
                     total += items;
                 }
                 if(total == total){
-                    cout << " $ " << total << "\n";
+                    cout << " Your Cart's Total is $ " << total << "\n";
                 }
             }
             //if choice == '5' :
@@ -131,7 +136,7 @@ int main()
                     // print('I dont know what you mean!??! Please answer y or n next time \n;)\n:P ')
             if (choice == 5) {
                 string verify = "";
-                cout << "Are you sure? \n (put 'y' for yes and 'n' for no)";
+                cout << "Are you sure? \n (put 'y' for yes and 'n' for no)" << "\n";
                 cin >> verify;
                 if (verify == "y") {
                     cout << "Thank you for shopping. Goodbye. \n";
@@ -142,12 +147,12 @@ int main()
                 else if (verify == "n") {
                     cout << "Plesae make sure you are ready to to quit next time. \n";
                 }
-                else {
+                else if (verify != "n" or verify != "y") {
                     cout << "I dont know what you mean!??! Please answer 'y' or 'n' next time \n ;) \n";
                 }
-            }
-            else{
+                else{
                 cout << "Please select only one of the five options! \n";
             }
         }  
+    }
 }

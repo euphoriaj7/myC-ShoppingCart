@@ -6,6 +6,10 @@
 using namespace std;
 using namespace shopping;
 
+vector<string>shoppingList = {};
+
+vector<float>priceList = {};
+
 int main()
 {
     Shopping shopping;
@@ -61,7 +65,12 @@ int main()
                 //print(f"'{item}' has been added to the cart.")
                 //print()        
             if (choice == 1) {
-                shopping.addItem();                
+                shopping.addItem();
+                shoppingList.push_back(item);
+                cout << "How much is the item? ";
+                cin >> price;
+                priceList.push_back(price);
+                cout << item << " has been added to the cart.\n";
             }
             // if choice == '2':
             //n = 0
@@ -89,11 +98,11 @@ int main()
             if (choice == 3) {
                 if(shoppingList.size() > 0){
                     int remove;
-                    //auto elem_to_remove = Shopping::shoppingList.begin();
+                    //auto elem_to_remove = shoppingList.begin();
                     cout << "Which item would you like to remove? (Please put in the number that corresponds with the item you wish to remove) \n";
                     cin >> remove;
                     //remove = (remove - 1);
-                    ////if (elem_to_remove != Shopping::shoppingList.end()) {
+                    ////if (elem_to_remove != shoppingList.end()) {
                     shoppingList.erase(shoppingList.begin() + (remove-1));
                     priceList.erase(priceList.begin() + (remove-1));
                     //}

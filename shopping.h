@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
-#include <vector>
+#include <list>
 
 namespace shopping {
     class Shopping {
         // private:
         public:
-        vector<string>shoppingList;
-        vector<float>priceList;
-        string item;
-        float price;
         Shopping();
+        // list<string>shoppingList;
+        // list<float>priceList;
+        string item;
+        // float price;
         void addItem();
         void removeItem();
     };

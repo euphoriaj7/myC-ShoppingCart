@@ -1,24 +1,27 @@
 #include <iostream>
 #include "shopping.h"
-#include <vector>
+#include <list>
 
 using namespace std;
 using namespace shopping;
 
+// constexpr static list<string>shoppingList = {};
+// constexpr static list<float>priceList = {};
+
 Shopping::Shopping()
-: vector<string>shoppingList, vector<float>priceList, string item, float price {};
+: item("") {};
 
 
 void Shopping::addItem(){
     cout << "What item would you like to add? ";
-    cin >> Shopping::item;
-    shoppingList.push_back(Shopping::item);
+    cin >> item;
+    // shoppingList.push_back(item);
     cout << "How much is the item? ";
-    cin >> Shopping::price;
-    priceList.push_back(Shopping::price);
-    cout << Shopping::item << " has been added to the cart.\n";
+    cin >> price;
+    // priceList.push_back(price);
+    // cout << item << " has been added to the cart.\n";
 }
 
-// void shopping::removeItem(){
+// void Shopping::removeItem(){
 
 // }

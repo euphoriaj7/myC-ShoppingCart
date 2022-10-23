@@ -12,6 +12,6 @@ namespace shopping {
         string item;
         float price;
         void addItem();
-        void removeItem();
+        // void removeItem();
     };
 }

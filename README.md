@@ -4,8 +4,12 @@
 This is a simple c++ program to show the basic of c++
 in the form of a shopping cart.
 
-# Demo Link
+# Demo Links
+  # Before shopping class creation
 - https://youtu.be/L2iK6AVbKyI
+
+  # After shopping class creation
+- https://youtu.be/sD7lpZL6wv4
 
 # Development Environment 
 - Visual Studio code Community
